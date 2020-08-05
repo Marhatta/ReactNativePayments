@@ -29,12 +29,12 @@ const Razorpay = () => {
           .then((data) => {
             // handle success
 
-            console.log(data)
+            console.log(data);
             alert(`Success: ${data.razorpay_payment_id}`);
           })
           .catch((error) => {
             // handle failure
-            console.log(error)
+            console.log(error);
             alert(`Error: ${error.code} | ${error.description}`);
           });
       }}>
@@ -44,13 +44,13 @@ const Razorpay = () => {
 };
 
 const styles = StyleSheet.create({
-    button:{
-        backgroundColor:'blue',
-        padding:10
-    },
-    text:{
-        color:'white'
-    }
+  button: {
+    backgroundColor: 'blue',
+    padding: 10,
+  },
+  text: {
+    color: 'white',
+  },
 });
 
 export default Razorpay;
