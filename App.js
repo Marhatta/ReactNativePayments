@@ -38,7 +38,7 @@ const App = () => {
     getPayments();
   }, [refundResponse]);
 
-  issuePartialRefund = async (paymentId,amount) => {
+  const issuePartialRefund = async (paymentId,amount) => {
     try {
       const refundResponse = await axios.post(
         `https://api.razorpay.com/v1/payments/${paymentId}/refund`,
@@ -65,7 +65,7 @@ const App = () => {
         <Text style={styles.text}>
           Only those items can be refunded which have a status of "Captured"
         </Text>
-        {payments?.map((payment, index) => {
+        {payments && payments.map((payment, index) => {
           return (
             <View key={index} style={styles.card}>
               <Text style={styles.text}>Bank - {payment.bank}</Text>
